@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import CardList from './components/Card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
+import FilteredMonstersContext from './contexts/filteredMonsters.context';
 
 
 const App = () => {
@@ -42,7 +43,11 @@ const App = () => {
         placeholder="search monsters"
         />
 
-        <CardList filteredMonsters={filteredMonsters} />
+        <FilteredMonstersContext.Provider value={{filteredMonsters}}>
+          {/* <CardList filteredMonsters={filteredMonsters} /> */}
+          <CardList />
+        </FilteredMonstersContext.Provider>
+        
       </div>
   );
 }
