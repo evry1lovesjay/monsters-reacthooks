@@ -1,14 +1,12 @@
-//this FilteredMonstersContext below will give us back the value stored inside value when the
-//context was created....
 import { useContext } from "react";
 
 import "./card.styles.css"
 
-import SingleFilteredMonstersContext from "../../contexts/filteredMonsters.context";
+import SingleFilteredMonsterContext from "../../contexts/filteredMonsters.context";
 
 
 const Card = () => {
-    const {filteredMonster} = useContext(SingleFilteredMonstersContext)
+    const {filteredMonster} = useContext(SingleFilteredMonsterContext)
     const {id, name, email}= filteredMonster;
     return (
         <div className="card-container" key={id}>
